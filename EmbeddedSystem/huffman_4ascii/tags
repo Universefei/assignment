@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BRANCH	node.hpp	/^   BRANCH,$/;"	m	struct:nodetype
+CC	Makefile	/^CC := g++$/;"	m
+CODE_HPP	code.hpp	2;"	d
+CXXFILES	Makefile	/^CXXFILES := main.cpp code.cpp tree.cpp node.cpp$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS := "-std=c++0x" -Wall -pedantic -g$/;"	m
+DEPFILES	Makefile	/^DEPFILES := $(CXXFILES:.cpp=.d)$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS :=$/;"	m
+NODE_HPP	node.hpp	2;"	d
+OBJFILES	Makefile	/^OBJFILES := $(CXXFILES:.cpp=.o)$/;"	m
+PROG	Makefile	/^PROG := huffman$/;"	m
+TREE_HPP	tree.hpp	2;"	d
+branch	node.hpp	/^      branch(node *left_, node *right_): node(left_, right_) {}$/;"	f	struct:branch
+branch	node.hpp	/^struct branch: public node$/;"	s
+compress	code.cpp	/^compress::compress(std::string infile_): infile(infile_)$/;"	f	class:compress
+compress	code.hpp	/^class compress$/;"	c
+create_tree	tree.cpp	/^void tree::create_tree()$/;"	f	class:tree
+decompress	code.cpp	/^decompress::decompress(std::string file_): file(file_, std::ios::binary)$/;"	f	class:decompress
+decompress	code.hpp	/^class decompress$/;"	c
+file	code.hpp	/^      std::ifstream file;$/;"	m	class:decompress
+generate_code	code.cpp	/^std::string generate_code(std::string plaintext, const tree &t)$/;"	f
+getplain	code.cpp	/^void decompress::getplain(const tree &hc)$/;"	f	class:decompress
+histog	code.hpp	/^      std::map<char, int> histog;$/;"	m	class:compress
+histog	code.hpp	/^      std::map<char, int> histog;$/;"	m	class:decompress
+infile	code.hpp	/^      std::ifstream infile;$/;"	m	class:compress
+leaf	node.hpp	/^      leaf(char payload_, int weight_): node(nullptr, nullptr, weight_), payload(payload_) { }$/;"	f	struct:leaf
+leaf	node.hpp	/^struct leaf: public node$/;"	s
+leaves	tree.hpp	/^      std::priority_queue<node*, std::vector<node*>, node_comp> leaves;$/;"	m	class:tree
+left	node.hpp	/^      node *left;$/;"	m	struct:node
+main	main.cpp	/^int main(int, char **argv)$/;"	f
+node	node.cpp	/^node::node(node *left_, node *right_, int weight_): left(left_), right(right_)$/;"	f	class:node
+node	node.hpp	/^struct node$/;"	s
+node_comp	node.hpp	/^struct node_comp: public std::binary_function<node*, node*, bool>$/;"	s
+nodetype	node.hpp	/^enum struct nodetype: bool$/;"	s
+operator ()	node.cpp	/^bool node_comp::operator()(const node* N1, const node* N2) {$/;"	f	class:node_comp
+payload	node.hpp	/^      char payload;$/;"	m	struct:leaf
+plaintext	code.cpp	/^std::string decompress::plaintext() const$/;"	f	class:decompress
+ptext	code.hpp	/^      std::string ptext;$/;"	m	class:decompress
+right	node.hpp	/^      node *right;$/;"	m	struct:node
+root	tree.hpp	/^      node *root;$/;"	m	class:tree
+rootnode	tree.cpp	/^node* tree::rootnode() const$/;"	f	class:tree
+search	code.cpp	/^void search(node *r, const char c, bool &found, std::string &plaincode)$/;"	f
+stream_offset	code.hpp	/^      uint16_t stream_offset;$/;"	m	class:decompress
+tree	tree.cpp	/^tree::tree(const std::map<char, int> histo)$/;"	f	class:tree
+tree	tree.hpp	/^class tree$/;"	c
+type	node.cpp	/^nodetype branch::type() const$/;"	f	class:branch
+type	node.cpp	/^nodetype leaf::type() const$/;"	f	class:leaf
+weight	node.hpp	/^      int weight;$/;"	m	struct:node
+write	code.cpp	/^void compress::write(std::string outfile_)$/;"	f	class:compress
+~compress	code.cpp	/^compress::~compress() {$/;"	f	class:compress
+~decompress	code.cpp	/^decompress::~decompress()$/;"	f	class:decompress
+~node	node.cpp	/^node::~node()$/;"	f	class:node
+~tree	tree.cpp	/^tree::~tree()$/;"	f	class:tree

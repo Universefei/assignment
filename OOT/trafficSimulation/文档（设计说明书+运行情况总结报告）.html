@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation -->
+<html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>feinote/curriculum/OOT/trafficSimulation at master · Universefei/feinote</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="github-fe137-cp1-prd.iad.github.net">
+    <meta name="ruby" content="ruby 1.9.3p194-tcs-github-tcmalloc (a846054d10) [x86_64-linux]">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="3D962B64:6F85:3580A60:52C96DD8" name="octolytics-dimension-request_id"><meta content="4932234" name="octolytics-actor-id"><meta content="Universefei" name="octolytics-actor-login"><meta content="b578bb2e2744947b5ddab86734a67a4a678ef728a90bc598bd3e7c0cccea531a" name="octolytics-actor-hash">
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="awmDL5Ndh2fnXd/mvGu125TPFQ6FVy3tmIX006ptY64=" name="csrf-token">
+
+    <link href="./文档（设计说明书+运行情况总结报告）_files/github-3944f96c1c19f752fe766b332fb7716555c8296e.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./文档（设计说明书+运行情况总结报告）_files/github2-26223e212ca99f1bf10e8a9619bc7a09400ed4f6.css" media="all" rel="stylesheet" type="text/css">
+    
+
+    
+
+      <script src="./文档（设计说明书+运行情况总结报告）_files/frameworks-29a3fb0547e33bd8d4530bbad9bae3ef00d83293.js" type="text/javascript"></script>
+      <script src="./文档（设计说明书+运行情况总结报告）_files/github-4ac46f893910c3da1bdbe9b20092fe75867245d8.js" type="text/javascript"></script><script type="text/javascript" async="" src="./文档（设计说明书+运行情况总结报告）_files/ga.js"></script>
+      
+      <meta http-equiv="x-pjax-version" content="8131df651c3e5051e69641ddd10fc78c">
+
+        <meta property="og:title" content="feinote">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/Universefei/feinote">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="Contribute to feinote development by creating an account on GitHub.">
+
+  <meta name="description" content="Contribute to feinote development by creating an account on GitHub.">
+
+  <meta content="4932234" name="octolytics-dimension-user_id"><meta content="Universefei" name="octolytics-dimension-user_login"><meta content="12124990" name="octolytics-dimension-repository_id"><meta content="Universefei/feinote" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="12124990" name="octolytics-dimension-repository_network_root_id"><meta content="Universefei/feinote" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/Universefei/feinote/commits/master.atom" rel="alternate" title="Recent Commits to feinote:master" type="application/atom+xml">
+
+  <script type="text/javascript" async="" src="./文档（设计说明书+运行情况总结报告）_files/api.js"></script></head>
+
+
+  <body class="logged_in  env-production linux vis-public" style="zoom: 100%;">
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+    
+    <a href="https://github.com/notifications" class="notification-indicator tooltipped downwards" data-gotokey="n" original-title="You have no unread notifications">
+        <span class="mail-status all-read"></span>
+</a>
+
+      <div class="command-bar js-command-bar  in-repository">
+          <form accept-charset="UTF-8" action="https://github.com/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="Universefei" data-repo="Universefei/feinote" data-branch="master" data-sha="fe942f0c333606d114ce4371561d122d733847ac">
+
+    <input type="hidden" name="nwo" value="Universefei/feinote">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="octicon help tooltipped downwards" original-title="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+        <ul class="top-nav">
+          <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com/">Gist</a></li>
+            <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+
+  <ul id="user-links">
+    <li>
+      <a href="https://github.com/Universefei" class="name">
+        <img height="20" src="./文档（设计说明书+运行情况总结报告）_files/bf195a0a2c30611f77bf1388d947bc0d" width="20"> Universefei
+      </a>
+    </li>
+
+      <li>
+        <a href="https://github.com/new" id="new_repo" class="tooltipped downwards" aria-label="Create a new repo" original-title="Create a new repo">
+          <span class="octicon octicon-repo-create"></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/settings/profile" id="account_settings" class="tooltipped downwards" aria-label="Account settings " original-title="Account settings ">
+          <span class="octicon octicon-tools"></span>
+        </a>
+      </li>
+      <li>
+        <a class="tooltipped downwards" href="https://github.com/logout" data-method="post" id="logout" aria-label="Sign out" original-title="Sign out">
+          <span class="octicon octicon-log-out"></span>
+        </a>
+      </li>
+
+  </ul>
+
+<div class="js-new-dropdown-contents hidden">
+  
+
+<ul class="dropdown-menu">
+  <li>
+    <a href="https://github.com/new"><span class="octicon octicon-repo-create"></span> New repository</a>
+  </li>
+  <li>
+    <a href="https://github.com/organizations/new"><span class="octicon octicon-organization"></span> New organization</a>
+  </li>
+
+
+
+    <li class="section-title">
+      <span title="Universefei/feinote">This repository</span>
+    </li>
+      <li>
+        <a href="https://github.com/Universefei/feinote/issues/new"><span class="octicon octicon-issue-opened"></span> New issue</a>
+      </li>
+      <li>
+        <a href="https://github.com/Universefei/feinote/settings/collaboration"><span class="octicon octicon-person-add"></span> New collaborator</a>
+      </li>
+</ul>
+
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="awmDL5Ndh2fnXd/mvGu125TPFQ6FVy3tmIX006ptY64="></div>  <input id="repository_id" name="repository_id" type="hidden" value="12124990">
+
+    <div class="select-menu js-menu-container js-select-menu">
+      <a class="social-count js-social-count" href="https://github.com/Universefei/feinote/watchers">
+        1
+      </a>
+      <span class="minibutton select-menu-button with-count js-menu-target" role="button" tabindex="0">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye-unwatch"></span>
+          Unwatch
+        </span>
+      </span>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notification status</span>
+            <span class="octicon octicon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container" role="menu">
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_included" name="do" type="radio" value="included">
+                <h4>Not watching</h4>
+                <span class="description">You only receive notifications for conversations in which you participate or are @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-watch"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_subscribed" name="do" type="radio" value="subscribed">
+                <h4>Watching</h4>
+                <span class="description">You receive notifications for all conversations in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-unwatch"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" type="radio" value="ignore">
+                <h4>Ignoring</h4>
+                <span class="description">You do not receive any notifications for conversations in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+  
+
+  <div class="js-toggler-container js-social-container starring-container ">
+    <a href="https://github.com/Universefei/feinote/unstar" class="minibutton with-count js-toggler-target star-button starred upwards" title="Unstar this repository" data-remote="true" data-method="post" rel="nofollow">
+      <span class="octicon octicon-star-delete"></span><span class="text">Unstar</span>
+    </a>
+
+    <a href="https://github.com/Universefei/feinote/star" class="minibutton with-count js-toggler-target star-button unstarred upwards" title="Star this repository" data-remote="true" data-method="post" rel="nofollow">
+      <span class="octicon octicon-star"></span><span class="text">Star</span>
+    </a>
+
+      <a class="social-count js-social-count" href="https://github.com/Universefei/feinote/stargazers">
+        0
+      </a>
+  </div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/Universefei/feinote/fork" class="minibutton with-count js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post">
+            <span class="octicon octicon-git-branch-create"></span><span class="text">Fork</span>
+          </a>
+          <a href="https://github.com/Universefei/feinote/network" class="social-count">0</a>
+        </li>
+
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/Universefei" class="url fn" itemprop="url" rel="author"><span itemprop="title">Universefei</span></a>
+          </span>
+          <span class="repohead-name-divider">/</span>
+          <strong><a href="https://github.com/Universefei/feinote" class="js-current-repository js-repo-home-link">feinote</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      
+
+      <div class="repository-with-sidebar repo-container">
+
+        <div class="repository-sidebar">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped leftwards" original-title="Code">
+        <a href="https://github.com/Universefei/feinote" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /Universefei/feinote">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+        <li class="tooltipped leftwards" original-title="Issues">
+          <a href="https://github.com/Universefei/feinote/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /Universefei/feinote/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">3</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+
+      <li class="tooltipped leftwards" original-title="Pull Requests">
+        <a href="https://github.com/Universefei/feinote/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /Universefei/feinote/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+
+        <li class="tooltipped leftwards" original-title="Wiki">
+          <a href="https://github.com/Universefei/feinote/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_wiki /Universefei/feinote/wiki">
+            <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped leftwards" original-title="Pulse">
+        <a href="https://github.com/Universefei/feinote/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /Universefei/feinote/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Graphs">
+        <a href="https://github.com/Universefei/feinote/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /Universefei/feinote/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Network">
+        <a href="https://github.com/Universefei/feinote/network" aria-label="Network" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-selected-links="repo_network /Universefei/feinote/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+    </ul>
+
+
+      <div class="sunken-menu-separator"></div>
+      <ul class="sunken-menu-group">
+        <li class="tooltipped leftwards" original-title="Settings">
+          <a href="https://github.com/Universefei/feinote/settings" class="sunken-menu-item" data-pjax="" aria-label="Settings">
+            <span class="octicon octicon-tools"></span> <span class="full-word">Settings</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+          </a>
+        </li>
+      </ul>
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url " data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=push">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="https://github.com/Universefei/feinote.git" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/Universefei/feinote.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url open" data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=push">
+  <h3><strong>SSH</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="git@github.com:Universefei/feinote.git" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="git@github.com:Universefei/feinote.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=push">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="https://github.com/Universefei/feinote" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/Universefei/feinote" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+      <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="js-clone-selector" data-protocol="ssh">SSH</a>,
+      or <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <span class="octicon help tooltipped upwards" original-title="Get help on which URL is right for you.">
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use">
+    <span class="octicon octicon-question"></span>
+    </a>
+  </span>
+</p>
+
+
+
+              <a href="https://github.com/Universefei/feinote/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                <span class="octicon octicon-cloud-download"></span>
+                Download ZIP
+              </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+
+<div class="file-navigation">
+  
+
+<div class="select-menu js-menu-container js-select-menu">
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-master-branch="master" data-ref="master" role="button" aria-label="Switch branches or tags" tabindex="0">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Find or create a branch…" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Find or create a branch…">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="./文档（设计说明书+运行情况总结报告）_files/文档（设计说明书+运行情况总结报告）.html" data-name="master" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <form accept-charset="UTF-8" action="https://github.com/Universefei/feinote/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="awmDL5Ndh2fnXd/mvGu125TPFQ6FVy3tmIX006ptY64="></div>
+            <span class="octicon octicon-git-branch-create select-menu-item-icon"></span>
+            <div class="select-menu-item-text">
+              <h4>Create branch: <span class="js-new-item-name"></span></h4>
+              <span class="description">from ‘master’</span>
+            </div>
+            <input type="hidden" name="name" id="name" class="js-new-item-value">
+            <input type="hidden" name="branch" id="branch" value="master">
+            <input type="hidden" name="path" id="path" value="curriculum/OOT/trafficSimulation">
+          </form> <!-- /.select-menu-item -->
+
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/Universefei/feinote" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">feinote</span></a></span></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/Universefei/feinote/tree/master/curriculum" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">curriculum</span></a></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">OOT</span></a></span><span class="separator"> / </span><strong class="final-path">trafficSimulation</strong><span class="separator"> / </span><form action="https://github.com/Universefei/feinote/new/master/curriculum/OOT/trafficSimulation" class="js-new-blob-form tooltipped rightwards new-file-link" method="post" original-title="Create a new file here"><span aria-label="Create a new file here" class="js-new-blob-submit octicon octicon-file-add" data-test-id="create-new-git-file" role="button"></span></form></div>
+
+  <p class="history-link">
+<a href="https://github.com/Universefei/feinote/commits/master/curriculum/OOT/trafficSimulation">      <span class="octicon octicon-history tooltipped" original-title="Browse commits for this branch"></span>
+      History
+</a>  </p>
+</div>
+
+
+
+<a href="https://github.com/Universefei/feinote/find/master" data-hotkey="t" class="js-show-file-finder" style="display:none" data-pjax="">Show File Finder</a>
+<div class="bubble files-bubble">
+
+    <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/Universefei/feinote/commit/e316c61d80a836572eb84cb800e4b3221ca794aa" class="message" data-pjax="true" title="dfa">dfa</a>
+        
+    </p>
+    <div class="commit-meta">
+      <span class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="e316c61d80a836572eb84cb800e4b3221ca794aa" data-copied-hint="copied!" title="Copy SHA"><span class="octicon octicon-clippy"></span></span>
+      <a href="https://github.com/Universefei/feinote/commit/e316c61d80a836572eb84cb800e4b3221ca794aa" class="sha-block" data-pjax="">latest commit <span class="sha">e316c61d80</span></a>
+
+      <div class="authorship">
+        <img class="gravatar" height="20" src="./文档（设计说明书+运行情况总结报告）_files/bf195a0a2c30611f77bf1388d947bc0d(1)" width="20">
+        <span class="author-name"><a href="https://github.com/Universefei" data-skip-pjax="true" rel="author">Universefei</a></span>
+        authored <time class="js-relative-date updated" datetime="2014-01-05T06:37:04-08:00" title="2014-01-05 06:37:04">just now</time>
+
+      </div>
+    </div>
+  </div>
+
+  <table class="files" data-pjax="">
+      <tbody><tr class="up-tree">
+        <td></td>
+        <td><a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT" rel="nofollow" title="Go to parent directory">..</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    
+</tbody><tbody class="" data-url="/Universefei/feinote/file-list/master/curriculum/OOT/trafficSimulation">
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation/doc" class="js-directory-link" id="9a09b4dfda82e3e665e31092d1c3ec8d-9d629789d12e7b33ff2a9b4a7915715e2502a915" title="doc">doc</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/3416617a98bcfea2e5d8fe805a7f4aa66336fa96" class="message" data-pjax="true" title="uml diagrams">uml diagrams</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T04:46:02-08:00" title="2014-01-05 04:46:02">2 hours ago</time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation/figures" class="js-directory-link" id="45f0cbef45da4225ac27f17a7f0f09fe-bc9f65fa2b1e5ec2b0f5f9c3678be2fac11a9a5b" title="figures">figures</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/3e06c0162e37e0793e5e3fc7cadbcbb42b40e18a" class="message" data-pjax="true" title="asd">asd</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T06:09:14-08:00" title="2014-01-05 06:09:14">28 minutes ago</time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation/src" class="js-directory-link" id="25d902c24283ab8cfbac54dfa101ad31-29ac6f3702dbe2bc250787910eedcd014459b302" title="src">src</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/3416617a98bcfea2e5d8fe805a7f4aa66336fa96" class="message" data-pjax="true" title="uml diagrams">uml diagrams</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T04:46:02-08:00" title="2014-01-05 04:46:02">2 hours ago</time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/blob/master/curriculum/OOT/trafficSimulation/AUTHORS" class="js-directory-link" id="3d350169560e75d0cf9fc8e3574a3639-1e7910d8cf4f1bc121719859bbad52c53ce78786" title="AUTHORS">AUTHORS</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/3416617a98bcfea2e5d8fe805a7f4aa66336fa96" class="message" data-pjax="true" title="uml diagrams">uml diagrams</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T04:46:02-08:00" title="2014-01-05 04:46:02">2 hours ago</time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/blob/master/curriculum/OOT/trafficSimulation/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-db401bc37f06b4d38cf8b8b03aa0017ccf762597" title="README.md">README.md</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/e316c61d80a836572eb84cb800e4b3221ca794aa" class="message" data-pjax="true" title="dfa">dfa</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T06:37:04-08:00" title="2014-01-05 06:37:04">just now</time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./文档（设计说明书+运行情况总结报告）_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/blob/master/curriculum/OOT/trafficSimulation/TODO" class="js-directory-link" id="b7b1e314614cf326c6e2b6eba1540682-8cc7abed9c537965446e675269ed7144d8c2f0cc" title="TODO">TODO</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/Universefei/feinote/commit/3416617a98bcfea2e5d8fe805a7f4aa66336fa96" class="message" data-pjax="true" title="uml diagrams">uml diagrams</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2014-01-05T04:46:02-08:00" title="2014-01-05 04:46:02">2 hours ago</time></span></td>
+    </tr>
+</tbody>
+
+  </table>
+</div>
+
+  <div id="readme" class="clearfix announce instapaper_body md">
+    <span class="name">
+      <span class="octicon octicon-book"></span>
+      README.md
+    </span>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="trafficsimulation" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#trafficsimulation"><span class="octicon octicon-link"></span></a>TrafficSimulation</h1>
+
+<h3>
+<a name="problem" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#problem"><span class="octicon octicon-link"></span></a>Problem:</h3>
+
+<p><a href="./文档（设计说明书+运行情况总结报告）_files/prob1.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/prob1.png" alt="prob1" style="max-width:100%;"></a><a href="./文档（设计说明书+运行情况总结报告）_files/prob2.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/prob2.png" alt="prob2" style="max-width:100%;"></a><a href="./文档（设计说明书+运行情况总结报告）_files/prob3.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/prob3.png" alt="prob3" style="max-width:100%;"></a></p>
+
+<h3>
+<a name="environment" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#environment"><span class="octicon octicon-link"></span></a>Environment:</h3>
+
+<ul>
+<li>OS        :Ubuntu 12.04</li>
+<li>Compiler  :G++ (qmake to build)</li>
+<li>Language  :C++</li>
+</ul><h2>
+<a name="%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6"><span class="octicon octicon-link"></span></a>设计说明书</h2>
+
+<p>本程序采用<code>Qt Graphics View</code>框架编写，<code>Qt Graphics View</code>提供了 <code>QGraphicsItem</code>,
+<code>QGraphicsScene</code>和<code>QGraphicsView</code>三个类，其中：</p>
+
+<ol>
+<li>
+<code>QGraphicsItem</code>表示界面中的物体，其中的<code>boundingRect()</code>,<code>paint()</code>为纯虚函数
+用户对于每个它的子类可以在这两个函数中定义物体的边框用于监测是否碰撞，和定义
+他们的形状，<code>advance</code>函数定义每一帧中，本物体应该执行的代码。</li>
+<li>
+<code>QGraphicsScene</code>视图类，它用户规划多个物体Item之间的布局情况。</li>
+<li>
+<code>QGraphicsView</code>场景类，用于实际的现实。</li>
+</ol><h3>
+<a name="%E8%AE%BE%E8%AE%A1%E7%B1%BB%E5%9B%BE%E5%92%8C%E5%BA%8F%E5%88%97%E5%9B%BE" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E8%AE%BE%E8%AE%A1%E7%B1%BB%E5%9B%BE%E5%92%8C%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="octicon octicon-link"></span></a>设计类图和序列图</h3>
+
+<p><strong>Class Diagram</strong>
+<a href="./文档（设计说明书+运行情况总结报告）_files/Class diagram.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/Class diagram.png" alt="class diagram" style="max-width:100%;"></a></p>
+
+<p><strong>Sequence Diagram</strong>
+<a href="./文档（设计说明书+运行情况总结报告）_files/Sequence Diagram.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/Sequence Diagram.png" alt="sequence diagram" style="max-width:100%;"></a></p>
+
+<h3>
+<a name="%E7%B1%BB%E8%AF%B4%E6%98%8E" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E7%B1%BB%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>类说明</h3>
+
+<p>注：更具体的类说明可以查看相应类的接口文件(.h), 注释十分详细。</p>
+
+<p><strong>Class QGraphicsItem</strong></p>
+
+<ul>
+<li>boundingRect() :给出大概的物体的矩形边框已用于检测是否碰撞</li>
+<li>paint() :画物体</li>
+<li>shape() :具体的边框，形状</li>
+<li>advance() :定义每一帧中每个物体应该进行的动作，在一下的每个类中都会用到，重要！</li>
+</ul><p><strong>Class TrafficLight</strong></p>
+
+<ul>
+<li>ticker :路灯的计时器</li>
+<li>getTrafficStatus() :获取当前路灯某个方向的状态，返回的是路灯的颜色。</li>
+</ul><p><strong>Class Car</strong></p>
+
+<ul>
+<li>genPlace :汽车产生的地点。</li>
+<li>dist :汽车的目的地。</li>
+<li>speed :汽车的速度。</li>
+<li>setStartPos() :根据汽车产生的地点，在constructor中调用此函数，将其放入相应位置。</li>
+<li>turnDirection() :从不同的产生地产生的车的拐弯方法不同，此函数是virtual函数，在
+               每个<code>CarXXX</code>中应该具体定义他们如何拐弯。</li>
+<li>abletoForward() :判断某路口的某路灯是否可以通行。</li>
+<li>checkLightForward() :根据car位置判断此刻（此帧）是否可以移动。根据前面是否有车和路灯情况。</li>
+</ul><p><strong>Class CarXXX</strong></p>
+
+<ul>
+<li>turnDirection() :重新实现的父类中的函数，因为不同地方出发的车转弯方法不同，所以每种都应定义
+               自己的转弯方法。</li>
+</ul><p><strong>Class CarGenerator</strong></p>
+
+<ul>
+<li>ticker : 汽车工厂的计时器。</li>
+<li>genPlace : 汽车工厂产生以哪里为产生地点的汽车。</li>
+<li>trafHeavy : 交通拥堵状况, 数值越大，产生车越快。表明交通越拥堵。</li>
+<li>placeSet() : 在constructor中调用，将本工厂放在相应的地方。</li>
+</ul><h3>
+<a name="%E5%85%A8%E5%B1%80%E5%92%8C%E9%9D%99%E6%80%81%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E5%85%A8%E5%B1%80%E5%92%8C%E9%9D%99%E6%80%81%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="octicon octicon-link"></span></a>全局和静态命名规则</h3>
+
+<p>注：全部声明在<code>misc.h</code>中了，其中有注释。</p>
+
+<ul>
+<li>
+<code>pLightAtCr1</code> <code>pLightAtCr2</code> ：在cr1的路灯和在cr2的路灯</li>
+<li>
+<code>EPlace</code> ：枚举类型，表明各个路口<code>eBSN</code> <code>eBSS</code> <code>eTBN</code> <code>eTBS</code> <code>eRHW</code> <code>eRHE</code>
+</li>
+<li>
+<code>pointColor[6]</code> :表示各个路口车的颜色,例如：<code>pointColor[eBSN]</code>表BSN路口出车的颜色</li>
+<li>
+<code>startPoint[6]</code> :表每个路口起点的坐标.</li>
+<li>
+<code>endPoint[6]</code> :表示以某个路口为终点的时候此终点的坐标</li>
+<li>
+<code>cr1Center</code> <code>cr2Center</code> :路口中心坐标, 也就是红绿灯中心坐标</li>
+<li>
+<code>lightCrXYYY</code> :在路口X，从YYY来的车辆应该检查红绿灯状态的点坐标</li>
+<li>
+<code>BBB2AAA</code> :从BBB方向到AAA方向的车应该转弯的点</li>
+</ul><h3>
+<a name="%E4%BB%BF%E7%9C%9F%E6%B5%81%E7%A8%8B" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E4%BB%BF%E7%9C%9F%E6%B5%81%E7%A8%8B"><span class="octicon octicon-link"></span></a>仿真流程</h3>
+
+<ul>
+<li>linux环境下安装Qt sdk</li>
+<li>打开terminal, cd到应用程序目录</li>
+<li><code>qmake -project</code></li>
+<li>
+<code>qmake trafficSimulation.pro</code>为项目生成Makefile文件</li>
+<li>
+<code>make</code>编译</li>
+<li>
+<code>./trafficSimulation</code>命令即可运行</li>
+</ul><h3>
+<a name="%E4%BB%BF%E7%9C%9F%E7%94%BB%E9%9D%A2" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E4%BB%BF%E7%9C%9F%E7%94%BB%E9%9D%A2"><span class="octicon octicon-link"></span></a>仿真画面</h3>
+
+<p><a href="./文档（设计说明书+运行情况总结报告）_files/snapshoot1.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/snapshoot1.png" alt="snapshot" style="max-width:100%;"></a></p>
+
+<h2>
+<a name="%E6%BA%90%E7%A8%8B%E5%BA%8F%E6%B8%85%E5%8D%95" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E6%BA%90%E7%A8%8B%E5%BA%8F%E6%B8%85%E5%8D%95"><span class="octicon octicon-link"></span></a>源程序清单</h2>
+
+<pre><code>.
+├── AUTHORS
+├── doc/
+│&nbsp;&nbsp; ├── 13prj.pdf
+│&nbsp;&nbsp; ├── Class Diagram0.asta
+│&nbsp;&nbsp; └── Class Diagram0.asta.bak
+├── figures/
+├── README.md
+├── src/ (源码文件夹)
+│&nbsp;&nbsp; ├── car.cpp
+│&nbsp;&nbsp; ├── carFrom.cpp
+│&nbsp;&nbsp; ├── carFrom.h
+│&nbsp;&nbsp; ├── carGenerator.cpp
+│&nbsp;&nbsp; ├── carGenerator.h
+│&nbsp;&nbsp; ├── car.h
+│&nbsp;&nbsp; ├── main.cpp
+│&nbsp;&nbsp; ├── Makefile
+│&nbsp;&nbsp; ├── misc.h
+│&nbsp;&nbsp; ├── trafficLight.cpp
+│&nbsp;&nbsp; ├── trafficLight.h
+│&nbsp;&nbsp; ├── trafficSimulation
+│&nbsp;&nbsp; └── trafficSimulation.pro
+└── TODO
+</code></pre>
+
+<h2>
+<a name="%E8%BF%90%E8%A1%8C%E6%83%85%E5%86%B5%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E8%BF%90%E8%A1%8C%E6%83%85%E5%86%B5%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A"><span class="octicon octicon-link"></span></a>运行情况总结报告</h2>
+
+<p><a href="./文档（设计说明书+运行情况总结报告）_files/snapshoot1.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/snapshoot1.png" alt="snapshot" style="max-width:100%;"></a><a href="./文档（设计说明书+运行情况总结报告）_files/snapshot2.png" target="_blank"><img src="./文档（设计说明书+运行情况总结报告）_files/snapshot2.png" alt="snapshot" style="max-width:100%;"></a></p>
+
+<p>注：车身的颜色代表了车的产生地点，车头的颜色表明了车的目的地。</p>
+
+<ul>
+<li>运行结果如上，红绿灯实时改变，当碰到红灯的时候车辆停止。</li>
+<li>运行程序后可看到看到车辆运行路线符合要求！</li>
+</ul><h2>
+<a name="%E6%84%8F%E8%A7%81%E5%92%8C%E5%BB%BA%E8%AE%AE" class="anchor" href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#%E6%84%8F%E8%A7%81%E5%92%8C%E5%BB%BA%E8%AE%AE"><span class="octicon octicon-link"></span></a>意见和建议</h2>
+
+<p>大作太难了，特别是没有做过界面的，刚开始无从下手，花了好长时间才做出来。
+希望以后作业可以不要求搞界面的，对于没有UI编程经验的人来说，第一次难度好大。
+或者老师可以给一下UI方面编程的具体意见。</p></article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2014 <span title="0.06111s from github-fe137-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/Universefei/feinote/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" original-title="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="theme-switcher js-theme-switcher tooltipped leftwards" original-title="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="https://github.com/Universefei/feinote/tree/master/curriculum/OOT/trafficSimulation#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+  
+
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" data-clipboard-ready="true" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" original-title="">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.v1.2.1.swf?nocache=1388932633510">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=github.com">         <embed src="https://github.global.ssl.fastly.net/flash/ZeroClipboard.v1.2.1.swf?nocache=1388932633510" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=github.com" scale="exactfit">                </object></div></body></html>
