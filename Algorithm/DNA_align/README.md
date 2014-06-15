@@ -1,7 +1,7 @@
 Dynamic program for DNA sequeue alignment
 =========================================
 
-This is experiment export markdown file, you should see the report [here]()
+This is experiment export markdown file, you should see the report [here](https://github.com/Universefei/assignment/tree/master/Algorithm/DNA_align)
 rather than browsing this plain markdown file.
 
 ## personal info
@@ -22,6 +22,7 @@ we can get final solution.
 * Analysis
 * Coding
 * Executing and Testing
+![draft]()
 
 ## Algorithm
 
@@ -47,8 +48,12 @@ finally to get optimial alignment, and to fill corresponding solutionMatrix.
 You can get in-depth perspective on the algorithm from the source code comments.
 
 ## Experiments & Discussion
+![outcomes]()
 
+* Time complexity  : O(n^2)
+* Space complexity : O(n^2)
 
 ## Conclusion
-We can get the optimal alignment solution from the solutionMatrix output.
+We can get the optimal alignment solution from the solutionMatrix output utilizing
+dynamic programming.
 
