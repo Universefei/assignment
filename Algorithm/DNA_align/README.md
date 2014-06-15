@@ -25,17 +25,17 @@ This is a application of dynamic programming that divides problems to smaller on
 
 ### Data structure
 Using two 2-demension to store outcomes.
-* `dynamicMatrix`     :  store dynamic result of all subproblems
+* `dynamicMatrix`     :  store dynamic results of all subproblems
 * `solutionMatrix`    :  store symbals for visual analysis.
 
 ### Algorithm discription
 Just using dynamic programming can solve this problem.
 
-First handle the boundary situation of dynamic programming.  Then figure out other situation leverage the boundary situation and other solved situation.
+First handle the boundary situations of dynamic programming.  Then figure out other situations leveraging the boundary situations and other solved situations.
 
-The boundary situation is `dynamicMatrix[maxverticalLength][...]` and `dynamicMatrix[...][maxHorizonalLength]`. Those data can filled with ease.
+The boundary situations are `dynamicMatrix[maxverticalLength][...]` and `dynamicMatrix[...][maxHorizonalLength]`. Those data can be filled with ease.
 
-Then leverage subproblems, right, down and diagonal element in the matrix, which are already solved, to find out which solution embrace the minimal penalty, finally to get optimial alignment, and to fill corresponding solutionMatrix.
+Then leverage subproblems, right, down and diagonal element in the matrix, which are already solved, to find out which solution owns the minimal penalty, finally to get optimial alignment, and to fill corresponding solutionMatrix.
 You can get in-depth perspective on the algorithm from the source code comments.
 
 ## Experiments & Discussion
