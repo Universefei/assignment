@@ -8,17 +8,18 @@ Simple bank system
 ## Running Test
 
 ### Step 1: Compiling
-![compiling]()
+![compiling](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/compiling.png)
 
 ### Step 2: Running
-  ![test1]()
-  ![test2]()
-  ![test3]()
+* 运行初始画面
+  ![test1](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test1.png)
+  ![test2](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test2.png)
+  ![test3](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test3.png)
 
-  ![test4]()
-  ![test5]()
-  ![test6]()
-  ![test7]()
-  ![test8]()
-  ![test9]()
-  ![test10]()
+  ![test4](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test4.png)
+  ![test5](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test5.png)
+  ![test6](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test6.png)
+  ![test7](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test7.png)
+  ![test8](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test8.png)
+  ![test9](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test9.png)
+  ![test10](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test10.png)
