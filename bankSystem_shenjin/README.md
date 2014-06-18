@@ -11,8 +11,8 @@ Simple bank system
 ![compiling](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/compiling.png)
 
 ### Step 2: Running
-* 运行初始画面
   ![test1](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test1.png)
+
   ![test2](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test2.png)
   ![test3](https://raw.githubusercontent.com/Universefei/assignment/master/bankSystem_shenjin/figures/test3.png)
 
