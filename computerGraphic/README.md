@@ -1,6 +1,6 @@
 Tunnel
 ======
-NOTICE: 你可以在[这里](https://github.com/Universefei/assignment/tree/master/computerGraphic)阅读此文档.
+NOTICE: 你可以在[这里](https://github.com/Universefei/assignment/tree/master/computerGraphic)阅读文档.
 
 ## Meta
 * Name      : 费伦宙
@@ -34,3 +34,5 @@ NOTICE: 你可以在[这里](https://github.com/Universefei/assignment/tree/mast
 ![key](figure/codesnapshot.png)
 * 可以通过键盘的上下键来前进和后退。
 
+## PS.
+源码/src/Tunnel.cpp有详细注释，这是一个按照标准流程写的图形渲染程序。
