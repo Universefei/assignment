@@ -1,10 +1,10 @@
 Tunnel
 ======
+NOTICE: 你可以在[这里](https://github.com/Universefei/assignment/tree/master/computerGraphic)阅读此文档.
 
 ## Meta
 * Name      : 费伦宙
 * SchoolNo. : 1303121797
-Notice: 你可以用在[这里]()查看本文档。
 
 ## Platform
 * CPU : intel E6400
@@ -31,6 +31,6 @@ Notice: 你可以用在[这里]()查看本文档。
 ## Demo
 运行效果如下图：
 ![pic](figure/11png.png)
-* 按键盘上下键可以前进和后退
 ![key](figure/codesnapshot.png)
+* 可以通过键盘的上下键来前进和后退。
 
